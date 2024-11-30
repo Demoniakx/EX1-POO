@@ -57,7 +57,7 @@ class CompteBancaire {
         this.#solde -= retrait;
         this.historiqueOperations.push("Retrait de " + retrait + " euros");
         console.log("Vous avez retiré " + retrait + " euros. Nouveau solde: " + this.#solde +" euros");
-        return this.solde
+        return this.#solde
     }
 
     //Method pour le taux interet
