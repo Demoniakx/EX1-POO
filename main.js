@@ -6,7 +6,7 @@ const compte = new CompteBancaire(1000);
 compte.ajoutDepot(200); 
 
 // Retrait
-compte.retraitSolde(1500);  
+compte.retraitSolde(150);  
 
 // Intérêts
 compte.soldeInteret(0.03); 

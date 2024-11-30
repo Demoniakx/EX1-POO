@@ -9,44 +9,50 @@ class CompteBancaire {
     this.historiqueOperations = [];
     }
 
+    //Getter pour le solde
     get solde(){
         return this.#solde;
     }
 
+    //Getter pour le dépot
     get depot(){
         return this.depot;
     }
 
+    //Getter pour le retrait
     get retrait(){
         return this.retrait;
     }
 
-
+    //Setter pour le depot
     set depot(depot){
         if(depot>=0){
-            this.depot = depot
+            this.depot = depot;
         }else{
             console.log("Montant du dépot invalide, pas de dépot négatif");
         }
 
     }
 
+    //Setter pour le retrait
     set retrait(retrait){
-        if(retrait <= this.#solde){
-            this.retrait = retrait
+        if(retrait <= solde){
+            this.retrait = retrait;
         }else{
             console.log("Solde insuffisant")
         }
         
     }
 
+    //Method pour le depot
     ajoutDepot(depot){
             this.#solde += depot;
             this.historiqueOperations.push("Dépot de " + depot + " euros")
             console.log("Vous avez déposé " + depot + "euros. Nouveau solde :" + this.#solde + " euros")
-            return this.solde
+            return this.#solde
     }
 
+    //Method pour le retrait
     retraitSolde(retrait){
         this.#solde -= retrait;
         this.historiqueOperations.push("Retrait de " + retrait + " euros");
@@ -54,6 +60,7 @@ class CompteBancaire {
         return this.solde
     }
 
+    //Method pour le taux interet
     soldeInteret(tauxInteret) {
         let soldeAvecInteret = this.#solde * tauxInteret + this.#solde;
         soldeAvecInteret = Math.round(soldeAvecInteret); 
@@ -62,6 +69,7 @@ class CompteBancaire {
         return soldeAvecInteret;
     }
 
+    //Method pour l'historique
     afficherHistorique(){
         console.log("Historique des opérations");
         this.historiqueOperations.forEach((operation, index) => {
