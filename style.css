@@ -1,0 +1,26 @@
+body{
+    background-color: #f4f4f4;
+}
+
+header{
+    color: rgb(0, 0, 146);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ 
+.main{
+    border: 2px solid #dcdcdc;
+}
+
+h1{
+    font-size: 28px;
+}
+
+h2{
+    font-size: 20px;
+}
+
+p{
+    font-style: italic;
+    text-align: center;
+}
